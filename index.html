@@ -25,7 +25,11 @@
     <button type="button" class="nav-btn" id="prevDay" aria-label="前日">‹ 前日</button>
     <div class="date-box">
       <div class="date-label" id="dateLabel"></div>
-      <button type="button" class="today-btn" id="todayBtn">今日</button>
+      <div class="head-actions">
+        <button type="button" class="pill" id="todayBtn">今日</button>
+        <button type="button" class="pill" id="summaryBtn">📊 集計</button>
+        <button type="button" class="pill" id="menuBtn">⚙ 設定</button>
+      </div>
     </div>
     <button type="button" class="nav-btn" id="nextDay" aria-label="翌日">翌日 ›</button>
   </header>
@@ -66,6 +70,9 @@
     <div class="sheet-grip"></div>
     <div class="sheet-body" id="sheetBody"></div>
   </section>
+
+  <!-- バックアップ読み込み用（画面には出さない） -->
+  <input type="file" id="importFile" class="visually-hidden" accept=".json,application/json" tabindex="-1" aria-hidden="true">
 
   <!-- 更新のお知らせ -->
   <div class="toast" id="toast" hidden></div>

@@ -8,7 +8,7 @@
  *   オンラインなら常にサーバーの最新ファイルを使い、キャッシュも最新に書き換える。
  *   オフライン（または通信が遅い）ときだけキャッシュを使う。
  */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = 'ts-cache-' + VERSION;
 const ASSETS = [
   './',
