@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>計画と実行</title>
+  <meta name="description" content="1日のタイムスケジュールを「計画」と「実行」で並べて記録するアプリ">
+  <meta name="theme-color" content="#1f2a44">
+
+  <!-- iOS（ホーム画面に追加）向け設定 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="計画と実行">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 上部：日付と移動ボタン -->
+  <header class="topbar">
+    <button type="button" class="nav-btn" id="prevDay" aria-label="前日">‹ 前日</button>
+    <div class="date-box">
+      <div class="date-label" id="dateLabel"></div>
+      <button type="button" class="today-btn" id="todayBtn">今日</button>
+    </div>
+    <button type="button" class="nav-btn" id="nextDay" aria-label="翌日">翌日 ›</button>
+  </header>
+
+  <!-- 中央：タイムライン -->
+  <main class="scroller" id="scroller">
+    <div class="col-head">
+      <div class="col-head-time"></div>
+      <div class="col-head-cell plan">計画</div>
+      <div class="col-head-cell actual">実行</div>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="time-col" id="timeCol"></div>
+      <div class="lane" id="lane-plan" data-kind="plan"></div>
+      <div class="lane" id="lane-actual" data-kind="actual"></div>
+      <div class="now-line" id="nowLine" hidden></div>
+    </div>
+  </main>
+
+  <!-- 範囲選択中の案内 -->
+  <div class="select-hint" id="selectHint" hidden>
+    <span id="selectHintText">終了位置をタップ</span>
+    <button type="button" class="hint-cancel" id="selectCancel">キャンセル</button>
+  </div>
+
+  <!-- 下部：固定ボタン -->
+  <footer class="bottombar">
+    <div class="running-info" id="runningInfo" hidden></div>
+    <div class="bottom-buttons">
+      <button type="button" class="stop-btn" id="stopBtn" hidden>■ 終了</button>
+      <button type="button" class="start-btn" id="startNowBtn">▶ 今から開始</button>
+    </div>
+  </footer>
+
+  <!-- ボトムシート（入力・編集・カテゴリ選択に共用） -->
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <section class="sheet" id="sheet" hidden role="dialog" aria-modal="true">
+    <div class="sheet-grip"></div>
+    <div class="sheet-body" id="sheetBody"></div>
+  </section>
+
+  <!-- 更新のお知らせ -->
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

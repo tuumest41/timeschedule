@@ -1,0 +1,18 @@
+{
+  "name": "計画と実行 — 1日のタイムスケジュール",
+  "short_name": "計画と実行",
+  "description": "1日のタイムスケジュールを「計画」と「実行」で並べて記録するアプリ",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1f2a44",
+  "theme_color": "#1f2a44",
+  "icons": [
+    { "src": "icons/icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
